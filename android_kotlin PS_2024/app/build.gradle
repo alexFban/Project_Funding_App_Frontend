@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.example.ps_2024"
+        minSdkVersion 15
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.example.ps2024'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_19
+        targetCompatibility JavaVersion.VERSION_19
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation 'com.beust:klaxon:5.5'
+
+    implementation ('com.squareup.retrofit2:retrofit:2.9.0') {
+        // exclude Retrofit’s OkHttp dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+
+    implementation 'com.squareup:otto:1.3.8'
+    implementation ('com.squareup.retrofit2:converter-gson:2.9.0'){
+        // exclude Retrofit’s OkHttp dependency module and define your own module import
+        implementation 'com.squareup.okio:okio:1.13.0'
+        exclude module: 'okhttp'
+    }
+    //compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okio:okio:3.0.0'
+    implementation('com.squareup.okhttp3:okhttp-urlconnection:3.2.0') {
+        exclude module: 'okhttp'
+    }
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

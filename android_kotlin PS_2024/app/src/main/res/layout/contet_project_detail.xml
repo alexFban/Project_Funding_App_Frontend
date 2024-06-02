@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/projectLayout"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:id="@+id/projectTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="80sp"
+        android:fontFamily="@font/indigo_daisy"/>
+
+    <ProgressBar
+        android:id="@+id/Prog"
+        android:layout_marginTop="140dp"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:indeterminateOnly="false"
+        tools:progress="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="10dp"
+        android:progressDrawable="@drawable/circle"
+        android:progress="75">
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/projectDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:fontFamily="@font/roboto_regular"/>
+
+    <Button
+        android:id="@+id/pledge_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/projectDescription"
+        android:background="@drawable/btn_custom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@android:color/white"
+        android:text="@string/pledge"/>
+
+</LinearLayout>
